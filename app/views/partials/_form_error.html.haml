@@ -1,0 +1,5 @@
+- if resource.errors.any?
+  .col-md-12
+    .alert.alert-danger
+      - resource.errors.full_messages.each do |msg|
+        %p= msg

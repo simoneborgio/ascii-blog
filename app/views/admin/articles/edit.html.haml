@@ -1,0 +1,5 @@
+%h2
+  = t(:edit_article)
+
+= form_for @article, url: admin_article_path(@article), method: 'put' do |f|
+  =render :partial => 'form', :locals => { :f => f }

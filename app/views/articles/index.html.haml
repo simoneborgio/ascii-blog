@@ -1,0 +1,43 @@
+%h1 Blog
+
+%br
+
+%p
+  = text_field_tag :q, nil, {placeholder: "#{t(:search)}...", class: 'form-control input-lg' }
+
+%br
+
+.articles
+
+:javascript
+
+  function search(){
+    var q = $('#q').val();
+    q = $.trim(q);
+    q = encodeURIComponent(q);
+
+    console.debug("Searching for: " + q);
+
+    $( ".articles" ).load( "#{articles_list_path}?q=" + q );
+  }
+
+  var searchTimeout = null;
+  var lastSearch = '';
+  $('#q').on('change keyup paste', function(){
+    if(lastSearch != $('#q').val()){
+      clearTimeout(searchTimeout);
+      searchTimeout = null;
+
+      lastSearch = $('#q').val();
+
+      if(lastSearch.length >= 3 || lastSearch == ''){
+        var q = lastSearch;
+
+        setTimeout(function(){
+           if(q === $('#q').val())
+            search();
+         }, 500);
+      }
+    }
+  });
+  search();

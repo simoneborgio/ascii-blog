@@ -1,0 +1,29 @@
+=render partial: 'partials/head'
+
+.page-header-container
+  .container
+    .row
+      .col-sm-12
+        %h2= t(:admin_control_panel)
+
+%br
+
+.container
+  .row
+    .col-sm-3
+      %h4= t(:menu)
+
+      %ul.nav.nav-pills.nav-stacked
+        %li{role: 'presentation', class: ('active' if current_page?(edit_admin_setting_path(global_setting)))}
+          = link_to t(:settings), edit_admin_setting_path(global_setting)
+        %li{role: 'presentation', class: ('active' if controller_name == 'pages')}
+          = link_to t(:pages), admin_pages_path
+        %li{role: 'presentation', class: ('active' if controller_name == 'articles')}
+          = link_to t(:articles), admin_articles_path
+
+        %li{role: 'presentation'}
+          = link_to t(:back), '/'
+    .col-sm-9
+      = yield
+
+=render partial: 'partials/scripts_footer'

@@ -1,0 +1,45 @@
+.col-sm-12
+  %h2
+    = t(:settings)
+
+= form_for @setting, url: admin_setting_path(@setting), method: 'put' do |f|
+  =render :partial => 'partials/form_error', :locals => { :resource => @setting }
+
+  .form-group.col-sm-6
+    =f.label :site_name, t(:setting_site_name), class: 'control-label'
+    =f.text_field :site_name, class: 'form-control'
+
+  .form-group.col-sm-6
+    =f.label :site_url, t(:setting_site_url), class: 'control-label'
+    =f.text_field :site_url, class: 'form-control'
+
+  .clearfix
+
+  .form-group.col-sm-6
+    =f.label :site_subtitle, t(:setting_site_subtitle), class: 'control-label'
+    =f.text_field :site_subtitle, class: 'form-control'
+
+  .clearfix
+
+  .form-group.col-sm-6
+    =f.label :facebook_url, t(:setting_facebook_url), class: 'control-label'
+    =f.text_field :facebook_url, class: 'form-control'
+
+  .form-group.col-sm-6
+    =f.label :twitter_url, t(:setting_twitter_url), class: 'control-label'
+    =f.text_field :twitter_url, class: 'form-control'
+
+  .clearfix
+
+  .form-group.col-sm-6
+    =f.label :linkedin_url, t(:setting_linkedin_url), class: 'control-label'
+    =f.text_field :linkedin_url, class: 'form-control'
+
+  .form-group.col-sm-6
+    =f.label :github_url, t(:setting_github_url), class: 'control-label'
+    =f.text_field :github_url, class: 'form-control'
+
+  .clearfix
+
+  .col-sm-12.text-center
+    =f.submit t(:save), class: 'btn btn-primary'

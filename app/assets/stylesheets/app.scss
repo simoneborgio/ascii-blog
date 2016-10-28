@@ -1,0 +1,138 @@
+/*
+* Bootstrap
+*/
+
+.field_with_errors {
+  input, select, textarea {
+    border-color: $brand-danger;
+  }
+
+  label {
+    color: $brand-danger;
+  }
+}
+
+/*
+* Variables
+*/
+
+$header-background-color: $midnight-blue;
+$header-title-color: lighten($peter-river, 5%);
+$header-nav-margin: 20px;
+$header-color: $clouds;
+$footer-background-color: $wet-asphalt;
+$footer-color: $clouds;
+$footer-padding: 50px;
+
+/*
+* Project specific
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Fredericka+the+Great");
+
+
+h1 {
+  color: $brand-primary;
+}
+
+.page-header-container{
+  background-color: $header-background-color;
+  color: $header-color;
+
+  h2 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 41px;
+    color: $header-title-color;
+    margin-top: $header-nav-margin;
+    margin-bottom: 0;
+  }
+
+  .main-nav {
+    margin-top: $header-nav-margin + 5px;
+
+    .nav-pills {
+      li {
+        float: right;
+        margin-left: 10px;
+      }
+      li.active{
+        border-bottom: solid 3px $clouds;
+        color: $clouds;
+
+        a {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .page-header-nav {
+    padding-bottom: $header-nav-margin;
+  }
+
+  .page-header-cta {
+    background: image_url("photo-1461749280684-dccba630e2f6") no-repeat;
+    background-position-y: 72%;
+    background-position-x: 70%;
+    background-size: 120%;
+    min-height: 200px;
+  }
+}
+
+.article-icon {
+  color: $brand-primary;
+  margin-right: 5px;
+}
+
+.article-content{
+  width: 100%;
+  border: none;
+}
+
+.footer {
+  background-color: $footer-background-color;
+  color: $footer-color;
+  padding-top: $footer-padding;
+  padding-bottom: $footer-padding;
+
+  margin-top: 50px;
+}
+
+.twitter-color{
+  color: #55acee;
+}
+.facebook-color{
+  color: #3b5998;
+}
+.linkedin-color{
+  color: #0077b5;
+}
+.github-color{
+  color: #333333;
+}
+.rss-color{
+  color: #f26522;
+}
+
+
+a.no-decoration, a.no-decoration:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tag {
+  margin-right: 5px;
+}
+
+/**
+* Experiments
+*/
+
+.test-dark-bg{
+  background-color: $midnight-blue;
+  color: $clouds;
+
+  h2 {
+    color: $peter-river;
+  }
+}

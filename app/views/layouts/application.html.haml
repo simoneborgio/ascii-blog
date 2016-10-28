@@ -1,0 +1,10 @@
+=render partial: 'partials/head'
+
+=render partial: 'partials/header'
+
+.container
+  .row
+    .col-sm-12.col-md-12
+      = yield
+
+=render partial: 'partials/footer'

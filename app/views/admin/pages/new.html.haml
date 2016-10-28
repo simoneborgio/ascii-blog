@@ -1,0 +1,5 @@
+%h2
+  = t(:new_page)
+
+= form_for @page, url: admin_pages_path, method: 'post' do |f|
+  =render :partial => 'form', :locals => { :f => f }

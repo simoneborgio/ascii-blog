@@ -1,0 +1,22 @@
+%h2= t :articles
+
+%p.text-right
+  = link_to t(:new), new_admin_article_path, class: 'btn btn-primary'
+
+%table.table
+  %thead
+    %tr
+      %th
+        = t(:article_title)
+      %th
+        = t(:article_reads)
+      %th
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td
+          = link_to article.title, edit_admin_article_path(article)
+        %td
+          = article.reads
+        %td.text-right
+          = link_to fa_icon('external-link'), article_path(article.uri)

@@ -1,0 +1,15 @@
+APP_NAME: 'AsciiBlog'
+
+development:
+  WEBSITE_URL: 'http://www.example.com'
+#  SECRET_KEY_BASE: 'SOME_SECRET'
+#  ASCII_BLOG_DATABASE: 'DB_NAME';
+#  ASCII_BLOG_DATABASE_USERNAME: 'DB_USERNAME';
+#  ASCII_BLOG_DATABASE_PASSWORD: 'DB_PASSWORD';
+#  GOOGLE_ANALYTICS_TRACKER: 'UA-...';
+#  SLACK_WEBHOOK_URL: 'https://hooks.slack.com/services/...'
+
+#production:
+  # For production environment I use to set them as system environment variables.
+  # I prefer to use Phusion Passenger 'passenger_env_var' like that:
+  #   passenger_env_var VARIABLE_NAME VALUE;

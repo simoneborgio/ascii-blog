@@ -1,0 +1,30 @@
+.page-header-container
+  .container.page-header-nav
+    .row
+      .col-sm-6
+        %h2
+          = link_to global_setting.site_name, welcome_index_path, class: 'no-decoration'
+        %p
+          %i= global_setting.site_subtitle
+      .col-sm-6.main-nav
+        %ul.nav.nav-pills
+
+          - if is_authenticated? && (global_user.is_admin? || global_user.is_editor?)
+            %li{ role: 'presentation', class: ('active' if controller_name == 'admin') }
+              = link_to fa_icon('gears'), admin_url
+
+          %li{ role: 'presentation', class: ('active' if controller_name == 'articles') }
+            = link_to t(:blog), articles_path
+
+          - Page.inverted.each do |page|
+            %li{ role: 'presentation', class: ('active' if current_page?(page_path(page.uri))) }
+              = link_to page.name, page_path(page.uri)
+
+      .clearfix
+
+  .page-header-cta
+    .container
+      .row
+        .col-sm-12
+
+

@@ -1,0 +1,21 @@
+.footer
+  .container
+    .row
+      .col-sm-6
+        %br
+        %h4= t(:site_created_with_asciiblog)
+
+      .col-sm-6.text-right
+        - icons_size = '2x'
+
+        = link_to fa_stacked_icon('rss inverse', base: 'square', class: "fa-#{icons_size} rss-color"), feed_path, class: 'no-decoration', target: '_blank'
+        - if global_setting.facebook_url.present?
+          = link_to fa_stacked_icon('facebook inverse', base: 'square', class: "fa-#{icons_size} facebook-color"), global_setting.facebook_url, class: 'no-decoration', target: '_blank'
+        - if global_setting.twitter_url.present?
+          = link_to fa_stacked_icon('twitter inverse', base: 'square', class: "fa-#{icons_size} twitter-color"), global_setting.twitter_url, class: 'no-decoration', target: '_blank'
+        - if global_setting.linkedin_url.present?
+          = link_to fa_stacked_icon('linkedin inverse', base: 'square', class: "fa-#{icons_size} linkedin-color"), global_setting.linkedin_url, class: 'no-decoration', target: '_blank'
+        - if global_setting.github_url.present?
+          = link_to fa_stacked_icon('github inverse', base: 'square', class: "fa-#{icons_size} github-color"), global_setting.github_url, class: 'no-decoration', target: '_blank'
+
+      .clearfix

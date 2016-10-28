@@ -1,0 +1,26 @@
+- @articles.each_with_index do |article, index|
+  .col-sm-6
+    %a.no-decoration{href: article_path(article.uri)}
+      %h4
+        = fa_icon 'quote-right', class: 'article-icon'
+        = article.title
+
+      %p.text-muted
+        %small
+          %i
+            = fa_icon 'clock-o'
+            = format_date_time article.release_date
+
+      %p
+        - if article.tags
+          - article.tags.split(',').each do |tag|
+            %span.label.label-success.tag
+              = tag.humanize
+
+      %p
+        = convert_adoc(article.preview, false)
+  - if (index + 1) % 2 == 0
+    .clearfix
+    .col-sm-6.col-sm-offset-3
+      %hr
+    .clearfix

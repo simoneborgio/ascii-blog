@@ -20,6 +20,8 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+/.idea
+
 /.sass-cache/
 
 /public/sitemap.xml.gz

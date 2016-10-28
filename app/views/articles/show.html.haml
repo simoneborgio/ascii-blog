@@ -1,0 +1,27 @@
+.container
+  .row
+    .col-sm-12
+      %h1= @article.title
+
+      %p.text-right.text-muted
+        = t(:article_created)
+        %i
+          = format_date_time @article.release_date
+
+      %hr
+
+%iframe.article-content{src: article_content_path(@article.uri), frameborder: '0', scrolling: 'no', onload: 'resizeIframe(this)' }
+
+.container
+  .row
+    .col-sm-12.text-right.text-muted
+      - if @article.author.present?
+        %p
+          = t(:article_author)
+          %i= @article.author.username
+
+      - if @article.created_at != @article.updated_at && @article.updated_at > @article.release_date
+        %p
+          = t(:article_updated)
+          %i
+            = format_date_time @article.updated_at
