@@ -30,11 +30,23 @@ $footer-padding: 50px;
 
 @import url("https://fonts.googleapis.com/css?family=Fredericka+the+Great");
 
-
 h1 {
   color: $brand-primary;
 }
 
+/* Adjust font size for small devices */
+//@media (max-width: $screen-sm-min) {
+@media (max-width: $screen-md-min) {
+  body {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 1.4em;
+  }
+}
+
+/* Page header */
 .page-header-container{
   background-color: $header-background-color;
   color: $header-color;

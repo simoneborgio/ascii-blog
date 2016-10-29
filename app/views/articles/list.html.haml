@@ -1,5 +1,5 @@
 - @articles.each_with_index do |article, index|
-  .col-sm-6
+  .col-md-6.col-sm-12
     %a.no-decoration{href: article_path(article.uri)}
       %h4
         = fa_icon 'quote-right', class: 'article-icon'
@@ -21,6 +21,6 @@
         = convert_adoc(article.preview, false)
   - if (index + 1) % 2 == 0
     .clearfix
-    .col-sm-6.col-sm-offset-3
+    .col-md-6.col-md-offset-3.col-sm-hidden
       %hr
     .clearfix
